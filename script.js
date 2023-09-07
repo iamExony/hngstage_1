@@ -8,12 +8,18 @@ const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Fri
 
             // Update the current time
             function updateCurrentTime() {
-            const currentTimeElement = document.getElementById("currentTime");
+            const currentHourElement = document.getElementById("currentHour");
+            const currentMinuteElement = document.getElementById("currentMin");
+            const currentSecondsElement = document.getElementById("currentSecs");
             const currentDate = new Date();
-            const currentUTCTime = currentDate.getTime(); // Get current time in milliseconds
+            const currentUTCHour = currentDate.getHours(); // Get current hour
+            const currentUTCMin = currentDate.getMinutes(); // Get current minutes
+            const currentUTCSecs = currentDate.getSeconds(); // Get current seconds
 
             // Update the content of the 'currentUTCTime' element
-            currentTimeElement.textContent = currentUTCTime;
+            currentHourElement.textContent = currentUTCHour;
+            currentMinuteElement.textContent = currentUTCMin;
+            currentSecondsElement.textContent = currentUTCSecs;
         }
 
         // Update the current time initially
