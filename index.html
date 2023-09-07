@@ -16,7 +16,7 @@
         <!-- My Slack User Name -->
         <h1 data-testid="slackUserName">Exony</h1>
         <!-- My Slack Photo -->
-        <img src="./myphoto.jpg" alt="Your Slack Username" data-testid="slackDisplayImage">
+        <img src="./myphoto.jpg" alt="Exony" data-testid="slackDisplayImage">
         <!-- Current Day of the Week -->
         <p data-testid="currentDayOfTheWeek" id="dayOfWeek"></p>
         <!-- Current Time of the Day -->
@@ -28,27 +28,7 @@
     </div>
     </div>
 
-    <script>   
-        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const currentDate = new Date();
-        const currentDayIndex = currentDate.getDay();
-        const currentDayOfWeek = daysOfWeek[currentDayIndex];
 
-        // Update the content of the 'currentDayOfTheWeek' element
-        document.getElementById("dayOfWeek").textContent = currentDayOfWeek;
-
-            // Update the current time
-            function updateCurrentTime() {
-            const currentTimeElement = document.getElementById("currentTime");
-            const currentDate = new Date();
-            const currentUTCTime = currentDate.getTime(); // Get current time in milliseconds
-
-            // Update the content of the 'currentUTCTime' element
-            currentTimeElement.textContent = currentUTCTime;
-        }
-
-        // Update the current time initially
-        updateCurrentTime();
-        </script>
+    <script src="./script.js"> </script>
 </body>
 </html>
