@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="styles.css">
     <title>My Profile</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    
 </head>
 <body>
+
 
     <div class="container">
     <div class="profile">
@@ -16,14 +18,37 @@
         <!-- My Slack Photo -->
         <img src="./myphoto.jpg" alt="Your Slack Username" data-testid="slackDisplayImage">
         <!-- Current Day of the Week -->
-        <p data-testid="currentDayOfTheWeek">Tuesday</p>
+        <p data-testid="currentDayOfTheWeek" id="dayOfWeek"></p>
         <!-- Current Time of the Day -->
-        <p data-testid="currentUTCTime">1630969200000</p>
+        <p data-testid="currentUTCTime" id="currentTime"></p>
         <!-- Track -->
         <p data-testid="myTrack">Frontend</p>
         <!-- GitHub Repository Link -->
         <a href="https://github.com/iamExony/hngstage_1" data-testid="githubURL" target="_blank">GitHub Repository</a>
     </div>
     </div>
+
+    <script>   
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const currentDate = new Date();
+        const currentDayIndex = currentDate.getDay();
+        const currentDayOfWeek = daysOfWeek[currentDayIndex];
+
+        // Update the content of the 'currentDayOfTheWeek' element
+        document.getElementById("dayOfWeek").textContent = currentDayOfWeek;
+
+            // Update the current time
+            function updateCurrentTime() {
+            const currentTimeElement = document.getElementById("currentTime");
+            const currentDate = new Date();
+            const currentUTCTime = currentDate.getTime(); // Get current time in milliseconds
+
+            // Update the content of the 'currentUTCTime' element
+            currentTimeElement.textContent = currentUTCTime;
+        }
+
+        // Update the current time initially
+        updateCurrentTime();
+        </script>
 </body>
 </html>
